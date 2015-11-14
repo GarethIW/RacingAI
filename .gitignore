@@ -63,4 +63,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-Assets/_ThirdParty/
+/Assets/_ThirdParty/
