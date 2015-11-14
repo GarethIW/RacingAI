@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -15,6 +16,9 @@ public class SimpleCarController : MonoBehaviour
 
     public void FixedUpdate()
     {
+        //Debug.Log(AIYAxis);
+        //Debug.Log(Input.GetAxis("Vertical"));
+
         float motor = maxMotorTorque * (IsAI?AIYAxis:Input.GetAxis("Vertical"));
         float steering = maxSteeringAngle * (IsAI?AIXAxis:Input.GetAxis("Horizontal"));
 
