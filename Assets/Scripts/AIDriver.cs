@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityStandardAssets.CrossPlatformInput;
 
 public class AIDriver : MonoBehaviour
 {
@@ -43,11 +42,11 @@ public class AIDriver : MonoBehaviour
         // drive forward (or reverse if we're reversing)
 	    controller.AIYAxis = (reverseTime>0f)?-1f:1f;
 
-        // If we're not moving at all, wait 3 seconds and then reverse for 3 seconds
+        // If we're not moving at all, wait 3 seconds and then reverse for 2 seconds
 	    if (reverseTime > 0f) reverseTime -= Time.deltaTime;
         else if(rigidbody.velocity.magnitude<0.1f) reverseTime -= Time.deltaTime;
 	    if (reverseTime < -3f)
-	        reverseTime = 3f;
+	        reverseTime = 2f;
 
         // If we're in range of the current target node, move to the next node
 	    if (Vector3.Distance(transform.position, target) < NodeRadius)
