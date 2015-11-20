@@ -40,6 +40,7 @@ public class AIDriver : MonoBehaviour
         controller.AIXAxis = Mathf.Clamp(cross, -1f, 1f);
 
         // drive forward (or reverse if we're reversing)
+	    float forwardSpeed = Mathf.Clamp(Vector3.Distance(target, transform.position)*0.2f, 0.1f, 0.5f);
 	    controller.AIYAxis = (reverseTime>0f)?-1f:1f;
 
         // If we're not moving at all, wait 3 seconds and then reverse for 2 seconds
